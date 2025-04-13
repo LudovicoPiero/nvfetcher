@@ -103,7 +103,7 @@ applyCliOptions config CLIOptions {..} = do
       { buildDir = optBuildDir,
         actionAfterBuild = do
           whenJust optLogPath logChangesToFile
-          when optCommit (commitChanges (fromMaybe "Update" optCommitSummary))
+          when optCommit (commitChanges (fromMaybe "Nvfetcher Update" optCommitSummary))
           actionAfterBuild config,
         shakeConfig =
           (shakeConfig config)
